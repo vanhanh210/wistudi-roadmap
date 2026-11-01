@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,13 +10,15 @@
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .mono { font-family: 'JetBrains Mono', monospace; }
+    .view-panel { display: none; }
+    .view-panel.active { display: block; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
-  <!-- Sticky Header -->
+  <!-- Header with Real Tabs -->
   <header class="bg-slate-900/95 backdrop-blur border-b border-slate-800 sticky top-0 z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center space-x-3 w-full sm:w-auto">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-500 to-indigo-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-orange-500/20">
           <i class="fa-solid fa-diagram-project text-base"></i>
         </div>
@@ -28,18 +30,23 @@
           <p class="text-[11px] text-slate-400 font-medium">Daily Reports Directory • Interactive Roadmap • LTI 1.3 • Sandbox • AI Credit</p>
         </div>
       </div>
-      <div class="flex items-center space-x-2 text-xs">
-        <button onclick="scrollToId('daily-reports')" class="px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-bold transition flex items-center space-x-1.5 shadow-md shadow-orange-600/20">
+      
+      <!-- Interactive Tab Buttons -->
+      <div class="flex items-center space-x-2 text-xs w-full sm:w-auto justify-end">
+        <button onclick="switchTab('daily')" id="btn-tab-daily" class="px-4 py-2 rounded-xl bg-orange-600 text-white font-bold transition flex items-center space-x-2 shadow-lg shadow-orange-600/30">
           <i class="fa-solid fa-list-check"></i><span>Daily Reports</span>
         </button>
-        <button onclick="scrollToId('roadmap')" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition flex items-center space-x-1.5 border border-slate-700">
+        <button onclick="switchTab('roadmap')" id="btn-tab-roadmap" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition flex items-center space-x-2 border border-slate-700">
           <i class="fa-solid fa-calendar-days text-indigo-400"></i><span>Roadmap Timeline</span>
+        </button>
+        <button onclick="switchTab('all')" id="btn-tab-all" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 font-semibold transition text-[11px] border border-slate-700">
+          <span>All</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Status -->
+  <!-- Hero Status Ribbon -->
   <div class="bg-slate-900/50 border-b border-slate-800 px-4 py-4">
     <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
       <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
@@ -65,9 +72,9 @@
     </div>
   </div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-12">
-    <!-- SECTION 1: ALL DAILY ARCHIFY REPORTS DIRECTORY -->
-    <section id="daily-reports" class="scroll-mt-24 space-y-4">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-10">
+    <!-- PANEL 1: DAILY REPORTS (Active by default) -->
+    <section id="panel-daily" class="view-panel active space-y-4">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div class="flex items-center space-x-3">
           <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center font-bold text-sm">
@@ -123,7 +130,7 @@
               </tr>
               <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
                 <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-slate-500"></span><span>03 Nov 2026 (Tue)</span></td>
-                <td class="py-3.5 px-4 text-slate-400">Discovery D-09→D-16, AI Credit 2-credit atomic lock, Sandbox mock context</td>
+                <td class="py-3.5 px-4 text-slate-400">Discovery D-09→D-16, AI Credit 2-credit lock, Sandbox mock context</td>
                 <td class="py-3.5 px-4"><span class="bg-slate-800 text-slate-400 px-2.5 py-0.5 rounded-full font-semibold text-[10px]">Planned</span></td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
@@ -148,8 +155,8 @@
       </div>
     </section>
 
-    <!-- SECTION 2: ROADMAP TIMELINE -->
-    <section id="roadmap" class="scroll-mt-24 space-y-4">
+    <!-- PANEL 2: ROADMAP TIMELINE -->
+    <section id="panel-roadmap" class="view-panel space-y-6">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div class="flex items-center space-x-3">
           <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold text-sm">
@@ -157,7 +164,7 @@
           </span>
           <div>
             <h2 class="text-lg font-black text-white">November 2026 Delivery Roadmap</h2>
-            <p class="text-xs text-slate-400">Week 1 Kickoff (02–06 Nov) & 4-Stage Release Milestones (Click any day to inspect)</p>
+            <p class="text-xs text-slate-400">Week 1 Kickoff (02–06 Nov) & 4-Stage Release Milestones (Click card to inspect)</p>
           </div>
         </div>
       </div>
@@ -238,12 +245,34 @@
   </footer>
 
   <script>
-    function scrollToId(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function switchTab(tab) {
+      const panelDaily = document.getElementById('panel-daily');
+      const panelRoadmap = document.getElementById('panel-roadmap');
+      const btnDaily = document.getElementById('btn-tab-daily');
+      const btnRoadmap = document.getElementById('btn-tab-roadmap');
+      const btnAll = document.getElementById('btn-tab-all');
+
+      if (tab === 'daily') {
+        panelDaily.className = 'view-panel active space-y-4';
+        panelRoadmap.className = 'view-panel space-y-6';
+        btnDaily.className = 'px-4 py-2 rounded-xl bg-orange-600 text-white font-bold transition flex items-center space-x-2 shadow-lg shadow-orange-600/30';
+        btnRoadmap.className = 'px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition flex items-center space-x-2 border border-slate-700';
+        btnAll.className = 'px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 font-semibold transition text-[11px] border border-slate-700';
+      } else if (tab === 'roadmap') {
+        panelDaily.className = 'view-panel space-y-4';
+        panelRoadmap.className = 'view-panel active space-y-6';
+        btnDaily.className = 'px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition flex items-center space-x-2 border border-slate-700';
+        btnRoadmap.className = 'px-4 py-2 rounded-xl bg-orange-600 text-white font-bold transition flex items-center space-x-2 shadow-lg shadow-orange-600/30';
+        btnAll.className = 'px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 font-semibold transition text-[11px] border border-slate-700';
+      } else if (tab === 'all') {
+        panelDaily.className = 'view-panel active space-y-4';
+        panelRoadmap.className = 'view-panel active space-y-6';
+        btnDaily.className = 'px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition flex items-center space-x-2 border border-slate-700';
+        btnRoadmap.className = 'px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold transition flex items-center space-x-2 border border-slate-700';
+        btnAll.className = 'px-3 py-2 rounded-xl bg-orange-600 text-white font-bold transition text-[11px]';
       }
     }
+
     const data = {
       mon02: { title: "Thứ Hai 02/11/2026 (7.5h)", body: "<p><b>1. Project C (1.5h):</b> Nhận access repos, schema repo, Staging, server Moodle. Bắt đầu Discovery D-01 đến D-08.</p><p><b>2. Sandbox Option 1 (3.5h):</b> Khởi tạo repo wistudi-block-lab, tích hợp UI snapshot.</p><p><b>3. AI Credit (2.5h):</b> Thiết kế bảng ledger, migration số dư và balance check middleware.</p>" },
       tue03: { title: "Thứ Ba 03/11/2026 (8.0h)", body: "<p><b>1. Project C (2.0h):</b> Discovery D-09 đến D-16 & chọn lib LTI/JWT.</p><p><b>2. AI Credit (3.5h):</b> Logic trừ 2 credits atomic, transaction lock, nút toggle Admin.</p><p><b>3. Sandbox (2.5h):</b> Xây dựng mock context và responsive player.</p>" },
