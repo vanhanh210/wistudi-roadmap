@@ -1,1 +1,215 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wistudi November 2026 — Archify Control Center & Daily Reports Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
+  <!-- Header -->
+  <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-orange-500 to-indigo-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-orange-500/20">
+          <i class="fa-solid fa-diagram-project text-sm"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-extrabold text-base tracking-tight text-white">Wistudi Archify Hub</span>
+            <span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[11px] font-bold px-2 py-0.5 rounded-full">November 2026</span>
+          </div>
+          <p class="text-[11px] text-slate-400">Daily Reports Hub • Interactive Roadmap • Project C • Sandbox • AI Credit</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-xs">
+        <a href="#daily-reports" class="px-3 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-semibold transition"><i class="fa-solid fa-list-check mr-1.5"></i>All Daily Reports</a>
+        <a href="#roadmap" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition"><i class="fa-solid fa-calendar mr-1.5"></i>Roadmap Timeline</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Status -->
+  <div class="bg-slate-900/50 border-b border-slate-800 px-4 py-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+      <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
+        <div class="text-[11px] text-slate-400 font-semibold uppercase">AI Credit Staging</div>
+        <div class="text-lg font-black text-amber-400 mt-0.5">Wed, 04 Nov</div>
+        <div class="text-[10px] text-slate-500">Charging = OFF • QA Sheet</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
+        <div class="text-[11px] text-slate-400 font-semibold uppercase">Sandbox Handover</div>
+        <div class="text-lg font-black text-orange-400 mt-0.5">Thu, 05 Nov</div>
+        <div class="text-[10px] text-slate-500">Cloudflare • Walkthrough 30m</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
+        <div class="text-[11px] text-slate-400 font-semibold uppercase">Callout Blocks Batch 1</div>
+        <div class="text-lg font-black text-indigo-400 mt-0.5">12–15 Nov</div>
+        <div class="text-[10px] text-slate-500">Brent Codex Build • Staging</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
+        <div class="text-[11px] text-slate-400 font-semibold uppercase">Project C Demo 1</div>
+        <div class="text-lg font-black text-emerald-400 mt-0.5">Fri, 20 Nov</div>
+        <div class="text-[10px] text-slate-500">JWKS • OIDC SSO Launch</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-12">
+    <!-- SECTION 1: ALL DAILY ARCHIFY REPORTS DIRECTORY -->
+    <section id="daily-reports" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-folder-open"></i></span>
+          <div>
+            <h2 class="text-lg font-extrabold text-white">Daily Archify Reports Directory</h2>
+            <p class="text-xs text-slate-400">All daily reports generated automatically and archived online</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-800/80 text-slate-300 font-bold border-b border-slate-700">
+                <th class="py-3 px-4">Date</th>
+                <th class="py-3 px-4">Key Focus & Highlights</th>
+                <th class="py-3 px-4">Status</th>
+                <th class="py-3 px-4">Archify Online View</th>
+                <th class="py-3 px-4">Google Doc</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300">
+              <tr class="hover:bg-slate-800/40 transition">
+                <td class="py-3.5 px-4 font-bold text-white flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>01 Nov 2026 (Sun)</span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-300">Pre-kickoff alignment, timeline balancing (7.5–8h/day), HRM bugs resolved</td>
+                <td class="py-3.5 px-4"><span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Complete</span></td>
+                <td class="py-3.5 px-4">
+                  <a href="reports/2026-11-01.html" class="text-orange-400 hover:text-orange-300 font-bold flex items-center space-x-1">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Archify</span>
+                  </a>
+                </td>
+                <td class="py-3.5 px-4">
+                  <a href="https://docs.google.com/document/d/12Lj78Vo8fOVPQ7cIIm2Gg3vC12wQXOKqWAm-OrEVwFs/edit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center space-x-1">
+                    <i class="fa-solid fa-file-lines"></i><span>Open Doc</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                  <span>02 Nov 2026 (Mon)</span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-400">Project C Discovery D-01→D-08, Sandbox repo scaffold, AI Credit schema</td>
+                <td class="py-3.5 px-4"><span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Scheduled 22:00</span></td>
+                <td class="py-3.5 px-4 text-slate-500">Auto-generated at 22:00</td>
+                <td class="py-3.5 px-4 text-slate-500">Auto-generated at 22:00</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                  <span>03 Nov 2026 (Tue)</span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-400">Discovery D-09→D-16 & libs, AI Credit 2-credit lock, Sandbox mock context</td>
+                <td class="py-3.5 px-4"><span class="bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-semibold text-[10px]">Planned</span></td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                  <span>04 Nov 2026 (Wed)</span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-400">saLTIre test with Tri, Sandbox drawers, <b>Deploy Staging AI Credit</b></td>
+                <td class="py-3.5 px-4"><span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Milestone</span></td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                  <span>05 Nov 2026 (Thu)</span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-400"><b>BÀN GIAO SANDBOX cho Brent</b> (4.0h), AI Credit QA checklist</td>
+                <td class="py-3.5 px-4"><span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Handover</span></td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+                <td class="py-3.5 px-4 text-slate-500">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ROADMAP TIMELINE -->
+    <section id="roadmap" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-calendar-days"></i></span>
+          <div>
+            <h2 class="text-lg font-extrabold text-white">November 2026 Delivery Roadmap</h2>
+            <p class="text-xs text-slate-400">Week 1 Kickoff (02–06 Nov) & 4-Stage Release Milestones</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3.5">
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Mon 02 Nov</span><span class="mono text-indigo-400">7.5h</span></div>
+          <div class="space-y-1 text-[11px] text-slate-400">
+            <p>• LTI Discovery D-01→D-08 (1.5h)</p>
+            <p>• Sandbox repo scaffold (3.5h)</p>
+            <p>• AI Credit schema & balance (2.5h)</p>
+          </div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Tue 03 Nov</span><span class="mono text-indigo-400">8.0h</span></div>
+          <div class="space-y-1 text-[11px] text-slate-400">
+            <p>• LTI Discovery D-09→D-16 (2.0h)</p>
+            <p>• AI Credit 2-credit lock (3.5h)</p>
+            <p>• Sandbox mock context (2.5h)</p>
+          </div>
+        </div>
+        <div class="bg-slate-900 border-2 border-amber-500/60 rounded-xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-amber-300"><span>Wed 04 Nov</span><span class="mono text-amber-400">8.0h</span></div>
+          <div class="space-y-1 text-[11px] text-slate-300">
+            <p>• saLTIre test with Tri (2.0h)</p>
+            <p>• Sandbox drawer components (3.5h)</p>
+            <p class="text-amber-300 font-bold">⭐ DEPLOY STAGING AI Credit (2.5h)</p>
+          </div>
+        </div>
+        <div class="bg-slate-900 border-2 border-orange-500/70 rounded-xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-orange-300"><span>Thu 05 Nov</span><span class="mono text-orange-400">7.5h</span></div>
+          <div class="space-y-1 text-[11px] text-slate-300">
+            <p class="text-orange-300 font-bold">🚀 BÀN GIAO SANDBOX cho Brent (4.0h)</p>
+            <p>• Gửi QA checklist AI Credit (1.5h)</p>
+            <p>• Spec pack audit với Tri (2.0h)</p>
+          </div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Fri 06 Nov</span><span class="mono text-emerald-400">5.0h</span></div>
+          <div class="space-y-1 text-[11px] text-slate-400">
+            <p>• Deliverables gửi Brent (1.5h)</p>
+            <p>• Support Brent kickoff (2.0h)</p>
+            <p>• Timesheet Week 1 (1.5h)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+    Wistudi Archify Hub • Automated Operations System
+  </footer>
+</body>
+</html>
