@@ -3,45 +3,86 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wistudi Archify Report — 01 Nov 2026</title>
+  <title>Wistudi Archify Daily Report — 01 Nov 2026</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap'); body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen p-6 antialiased">
-  <div class="max-w-4xl mx-auto space-y-6">
-    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8 antialiased">
+  <div class="max-w-5xl mx-auto space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-5 gap-4">
       <div>
-        <a href="../index.html" class="text-xs text-orange-400 hover:underline flex items-center space-x-1 mb-1"><i class="fa-solid fa-arrow-left"></i><span>Back to All Reports Hub</span></a>
-        <h1 class="text-xl font-black text-white">Daily Report — 01 Nov 2026 (Sunday)</h1>
-        <p class="text-xs text-slate-400">Preparation & Kickoff Readiness • Lead: Anh Nguyen</p>
+        <a href="../index.html" class="inline-flex items-center space-x-1.5 text-xs text-orange-400 hover:text-orange-300 font-semibold mb-2">
+          <i class="fa-solid fa-arrow-left"></i><span>Back to All Reports Hub</span>
+        </a>
+        <h1 class="text-2xl font-black text-white tracking-tight">Wistudi Daily Progress Report — 01 Nov 2026</h1>
+        <p class="text-xs text-slate-400 mt-1">Pre-kickoff Alignment • Lead Developer: Anh Nguyen (TGN Digital / Wistudi)</p>
       </div>
-      <a href="https://docs.google.com/document/d/12Lj78Vo8fOVPQ7cIIm2Gg3vC12wQXOKqWAm-OrEVwFs/edit" target="_blank" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs flex items-center space-x-1.5 transition">
-        <i class="fa-solid fa-file-lines"></i><span>Open Google Doc</span>
-      </a>
+      <div class="flex items-center space-x-2.5">
+        <a href="https://docs.google.com/document/d/12Lj78Vo8fOVPQ7cIIm2Gg3vC12wQXOKqWAm-OrEVwFs/edit" target="_blank" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs flex items-center space-x-2 transition shadow-md shadow-indigo-600/20">
+          <i class="fa-solid fa-file-lines"></i><span>Open Google Doc</span>
+        </a>
+      </div>
     </div>
 
-    <div class="bg-emerald-950/40 border border-emerald-800/80 rounded-xl p-4 text-emerald-200 text-xs">
-      <b>Status:</b> All kickoff preparation completed. Week 1 schedule aligned at 7.5–8.0h/day.
+    <!-- Status Banner -->
+    <div class="bg-emerald-950/40 border border-emerald-800/80 rounded-2xl p-4 flex items-center justify-between text-xs text-emerald-300">
+      <div class="flex items-center space-x-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span><b>Status: Ready for Kickoff</b> • Week 1 balanced at 7.5–8.0h/day • Sandbox Handover 05 Nov • AI Credit Staging 04 Nov.</span>
+      </div>
+      <span class="mono text-[10px] bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded font-bold uppercase">100% On Track</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
-        <h3 class="font-bold text-white text-sm flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-400"></i><span>Completed Today</span></h3>
-        <ul class="space-y-1.5 text-slate-300 list-disc list-inside">
-          <li>Audited Wistudi Project Drive folder & proposal v4 specs.</li>
-          <li>Locked Sandbox handover to Thu 05 Nov & AI Credit Staging to Wed 04 Nov.</li>
-          <li>Resolved High HRM bugs before Sunday 18:00 deadline.</li>
-          <li>Activated GitHub CLI & automated tracking schedule at 22:00.</li>
+    <!-- Completed & Tomorrow Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 shadow-lg">
+        <h3 class="font-extrabold text-white text-sm flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+          <span>Completed Today (Sunday 01 Nov)</span>
+        </h3>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-start space-x-2">
+            <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+            <span><b>Synthesized all Brent feedback & specifications:</b> Audited Project C SRS (PC-00 to PC-06), Sandbox v2.0 plan, and AI Credit proposal.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+            <span><b>Balanced Week 1 schedule:</b> Locked Sandbox handover to Thu 05 Nov, AI Credit staging to Wed 04 Nov, and Project C Prep Week.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+            <span><b>Resolved High HRM bugs:</b> Cleared all blocking items before the Sunday 18:00 deadline.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+            <span><b>Setup automated report pipeline:</b> Activated real-time email listener and 22:00 daily report automation.</span>
+          </li>
         </ul>
       </div>
 
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
-        <h3 class="font-bold text-white text-sm flex items-center space-x-2"><i class="fa-solid fa-arrow-right text-indigo-400"></i><span>Plan for Tomorrow (Mon 02 Nov)</span></h3>
-        <ul class="space-y-1.5 text-slate-300 list-disc list-inside">
-          <li><b>Project C (1.5h):</b> Verify access rights; start Discovery D-01→D-08.</li>
-          <li><b>Sandbox (3.5h):</b> Repo scaffold & Flow/XP Video shell on Cloudflare.</li>
-          <li><b>AI Credit (2.5h):</b> Database models & balance check middleware.</li>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 shadow-lg">
+        <h3 class="font-extrabold text-white text-sm flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-right"></i></span>
+          <span>Plan for Tomorrow (Monday 02 Nov)</span>
+        </h3>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-start space-x-2">
+            <i class="fa-regular fa-clock text-indigo-400 mt-0.5"></i>
+            <span><b>Project C Prep (1.5h):</b> Verify access rights to repos, schema repo, Staging, and Moodle server; kick off Discovery D-01 to D-08.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i class="fa-regular fa-clock text-indigo-400 mt-0.5"></i>
+            <span><b>Sandbox Option 1 (3.5h):</b> Initialize <code>wistuditeam-brent/wistudi-block-lab</code> and scaffold Flow/XP Video shell.</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <i class="fa-regular fa-clock text-indigo-400 mt-0.5"></i>
+            <span><b>AI Credit (2.5h):</b> Database models & balance check middleware (pre-flight balance &gt;= 2 credits).</span>
+          </li>
         </ul>
       </div>
     </div>

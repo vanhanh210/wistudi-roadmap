@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,62 +13,68 @@
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
-  <!-- Header -->
-  <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between">
+  <!-- Sticky Header -->
+  <header class="bg-slate-900/95 backdrop-blur border-b border-slate-800 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-orange-500 to-indigo-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-orange-500/20">
-          <i class="fa-solid fa-diagram-project text-sm"></i>
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-500 to-indigo-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-orange-500/20">
+          <i class="fa-solid fa-diagram-project text-base"></i>
         </div>
         <div>
           <div class="flex items-center space-x-2">
             <span class="font-extrabold text-base tracking-tight text-white">Wistudi Archify Hub</span>
-            <span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[11px] font-bold px-2 py-0.5 rounded-full">November 2026</span>
+            <span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full">November 2026</span>
           </div>
-          <p class="text-[11px] text-slate-400">Daily Reports Hub • Interactive Roadmap • Project C • Sandbox • AI Credit</p>
+          <p class="text-[11px] text-slate-400 font-medium">Daily Reports Directory • Interactive Roadmap • LTI 1.3 • Sandbox • AI Credit</p>
         </div>
       </div>
       <div class="flex items-center space-x-2 text-xs">
-        <a href="#daily-reports" class="px-3 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-semibold transition"><i class="fa-solid fa-list-check mr-1.5"></i>All Daily Reports</a>
-        <a href="#roadmap" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition"><i class="fa-solid fa-calendar mr-1.5"></i>Roadmap Timeline</a>
+        <button onclick="scrollToId('daily-reports')" class="px-3.5 py-2 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-bold transition flex items-center space-x-1.5 shadow-md shadow-orange-600/20">
+          <i class="fa-solid fa-list-check"></i><span>Daily Reports</span>
+        </button>
+        <button onclick="scrollToId('roadmap')" class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition flex items-center space-x-1.5 border border-slate-700">
+          <i class="fa-solid fa-calendar-days text-indigo-400"></i><span>Roadmap Timeline</span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Hero Status -->
   <div class="bg-slate-900/50 border-b border-slate-800 px-4 py-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
       <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-        <div class="text-[11px] text-slate-400 font-semibold uppercase">AI Credit Staging</div>
-        <div class="text-lg font-black text-amber-400 mt-0.5">Wed, 04 Nov</div>
+        <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">AI Credit Staging</div>
+        <div class="text-base font-black text-amber-400 mt-0.5">Wed, 04 Nov</div>
         <div class="text-[10px] text-slate-500">Charging = OFF • QA Sheet</div>
       </div>
       <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-        <div class="text-[11px] text-slate-400 font-semibold uppercase">Sandbox Handover</div>
-        <div class="text-lg font-black text-orange-400 mt-0.5">Thu, 05 Nov</div>
+        <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sandbox Handover</div>
+        <div class="text-base font-black text-orange-400 mt-0.5">Thu, 05 Nov</div>
         <div class="text-[10px] text-slate-500">Cloudflare • Walkthrough 30m</div>
       </div>
       <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-        <div class="text-[11px] text-slate-400 font-semibold uppercase">Callout Blocks Batch 1</div>
-        <div class="text-lg font-black text-indigo-400 mt-0.5">12–15 Nov</div>
+        <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Callout Blocks Batch 1</div>
+        <div class="text-base font-black text-indigo-400 mt-0.5">12–15 Nov</div>
         <div class="text-[10px] text-slate-500">Brent Codex Build • Staging</div>
       </div>
       <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-        <div class="text-[11px] text-slate-400 font-semibold uppercase">Project C Demo 1</div>
-        <div class="text-lg font-black text-emerald-400 mt-0.5">Fri, 20 Nov</div>
+        <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Project C Demo 1</div>
+        <div class="text-base font-black text-emerald-400 mt-0.5">Fri, 20 Nov</div>
         <div class="text-[10px] text-slate-500">JWKS • OIDC SSO Launch</div>
       </div>
     </div>
   </div>
 
-  <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-12">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-12">
     <!-- SECTION 1: ALL DAILY ARCHIFY REPORTS DIRECTORY -->
-    <section id="daily-reports" class="space-y-4">
+    <section id="daily-reports" class="scroll-mt-24 space-y-4">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div class="flex items-center space-x-3">
-          <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-folder-open"></i></span>
+          <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 border border-orange-500/30 flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-folder-open"></i>
+          </span>
           <div>
-            <h2 class="text-lg font-extrabold text-white">Daily Archify Reports Directory</h2>
+            <h2 class="text-lg font-black text-white">Daily Archify Reports Directory</h2>
             <p class="text-xs text-slate-400">All daily reports generated automatically and archived online</p>
           </div>
         </div>
@@ -80,7 +86,7 @@
             <thead>
               <tr class="bg-slate-800/80 text-slate-300 font-bold border-b border-slate-700">
                 <th class="py-3 px-4">Date</th>
-                <th class="py-3 px-4">Key Focus & Highlights</th>
+                <th class="py-3 px-4">Key Focus & Technical Deliverables</th>
                 <th class="py-3 px-4">Status</th>
                 <th class="py-3 px-4">Archify Online View</th>
                 <th class="py-3 px-4">Google Doc</th>
@@ -93,14 +99,14 @@
                   <span>01 Nov 2026 (Sun)</span>
                 </td>
                 <td class="py-3.5 px-4 text-slate-300">Pre-kickoff alignment, timeline balancing (7.5–8h/day), HRM bugs resolved</td>
-                <td class="py-3.5 px-4"><span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Complete</span></td>
+                <td class="py-3.5 px-4"><span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-bold text-[10px]">Complete</span></td>
                 <td class="py-3.5 px-4">
-                  <a href="reports/2026-11-01.html" class="text-orange-400 hover:text-orange-300 font-bold flex items-center space-x-1">
+                  <a href="reports/2026-11-01.html" class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 font-bold transition">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Archify</span>
                   </a>
                 </td>
                 <td class="py-3.5 px-4">
-                  <a href="https://docs.google.com/document/d/12Lj78Vo8fOVPQ7cIIm2Gg3vC12wQXOKqWAm-OrEVwFs/edit" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center space-x-1">
+                  <a href="https://docs.google.com/document/d/12Lj78Vo8fOVPQ7cIIm2Gg3vC12wQXOKqWAm-OrEVwFs/edit" target="_blank" class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 font-semibold transition">
                     <i class="fa-solid fa-file-lines"></i><span>Open Doc</span>
                   </a>
                 </td>
@@ -111,37 +117,28 @@
                   <span>02 Nov 2026 (Mon)</span>
                 </td>
                 <td class="py-3.5 px-4 text-slate-400">Project C Discovery D-01→D-08, Sandbox repo scaffold, AI Credit schema</td>
-                <td class="py-3.5 px-4"><span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Scheduled 22:00</span></td>
-                <td class="py-3.5 px-4 text-slate-500">Auto-generated at 22:00</td>
-                <td class="py-3.5 px-4 text-slate-500">Auto-generated at 22:00</td>
+                <td class="py-3.5 px-4"><span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-2.5 py-0.5 rounded-full font-bold text-[10px]">Scheduled 22:00</span></td>
+                <td class="py-3.5 px-4 text-slate-500">Auto-deploy at 22:00</td>
+                <td class="py-3.5 px-4 text-slate-500">Auto-deploy at 22:00</td>
               </tr>
               <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
-                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-slate-500"></span>
-                  <span>03 Nov 2026 (Tue)</span>
-                </td>
-                <td class="py-3.5 px-4 text-slate-400">Discovery D-09→D-16 & libs, AI Credit 2-credit lock, Sandbox mock context</td>
-                <td class="py-3.5 px-4"><span class="bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-semibold text-[10px]">Planned</span></td>
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-slate-500"></span><span>03 Nov 2026 (Tue)</span></td>
+                <td class="py-3.5 px-4 text-slate-400">Discovery D-09→D-16, AI Credit 2-credit atomic lock, Sandbox mock context</td>
+                <td class="py-3.5 px-4"><span class="bg-slate-800 text-slate-400 px-2.5 py-0.5 rounded-full font-semibold text-[10px]">Planned</span></td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
               </tr>
               <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
-                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                  <span>04 Nov 2026 (Wed)</span>
-                </td>
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span><span>04 Nov 2026 (Wed)</span></td>
                 <td class="py-3.5 px-4 text-slate-400">saLTIre test with Tri, Sandbox drawers, <b>Deploy Staging AI Credit</b></td>
-                <td class="py-3.5 px-4"><span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Milestone</span></td>
+                <td class="py-3.5 px-4"><span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full font-bold text-[10px]">Milestone</span></td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
               </tr>
               <tr class="hover:bg-slate-800/40 transition bg-slate-900/50">
-                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                  <span>05 Nov 2026 (Thu)</span>
-                </td>
+                <td class="py-3.5 px-4 font-bold text-slate-400 flex items-center space-x-2"><span class="w-2 h-2 rounded-full bg-orange-500"></span><span>05 Nov 2026 (Thu)</span></td>
                 <td class="py-3.5 px-4 text-slate-400"><b>BÀN GIAO SANDBOX cho Brent</b> (4.0h), AI Credit QA checklist</td>
-                <td class="py-3.5 px-4"><span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded font-semibold text-[10px]">Handover</span></td>
+                <td class="py-3.5 px-4"><span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2.5 py-0.5 rounded-full font-bold text-[10px]">Handover</span></td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
                 <td class="py-3.5 px-4 text-slate-500">—</td>
               </tr>
@@ -152,52 +149,69 @@
     </section>
 
     <!-- SECTION 2: ROADMAP TIMELINE -->
-    <section id="roadmap" class="space-y-4">
+    <section id="roadmap" class="scroll-mt-24 space-y-4">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <div class="flex items-center space-x-3">
-          <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-calendar-days"></i></span>
+          <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
           <div>
-            <h2 class="text-lg font-extrabold text-white">November 2026 Delivery Roadmap</h2>
-            <p class="text-xs text-slate-400">Week 1 Kickoff (02–06 Nov) & 4-Stage Release Milestones</p>
+            <h2 class="text-lg font-black text-white">November 2026 Delivery Roadmap</h2>
+            <p class="text-xs text-slate-400">Week 1 Kickoff (02–06 Nov) & 4-Stage Release Milestones (Click any day to inspect)</p>
           </div>
         </div>
       </div>
 
+      <!-- Week 1 Daily Cards -->
       <div class="grid grid-cols-1 md:grid-cols-5 gap-3.5">
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
-          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Mon 02 Nov</span><span class="mono text-indigo-400">7.5h</span></div>
+        <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-xl p-4 space-y-2 cursor-pointer transition shadow-sm" onclick="showModal('mon02')">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+            <span>Mon 02 Nov</span><span class="mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded">7.5h</span>
+          </div>
           <div class="space-y-1 text-[11px] text-slate-400">
             <p>• LTI Discovery D-01→D-08 (1.5h)</p>
             <p>• Sandbox repo scaffold (3.5h)</p>
             <p>• AI Credit schema & balance (2.5h)</p>
           </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
-          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Tue 03 Nov</span><span class="mono text-indigo-400">8.0h</span></div>
+
+        <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-xl p-4 space-y-2 cursor-pointer transition shadow-sm" onclick="showModal('tue03')">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+            <span>Tue 03 Nov</span><span class="mono text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded">8.0h</span>
+          </div>
           <div class="space-y-1 text-[11px] text-slate-400">
             <p>• LTI Discovery D-09→D-16 (2.0h)</p>
             <p>• AI Credit 2-credit lock (3.5h)</p>
             <p>• Sandbox mock context (2.5h)</p>
           </div>
         </div>
-        <div class="bg-slate-900 border-2 border-amber-500/60 rounded-xl p-4 space-y-2">
-          <div class="flex items-center justify-between text-xs font-bold text-amber-300"><span>Wed 04 Nov</span><span class="mono text-amber-400">8.0h</span></div>
+
+        <div class="bg-slate-900 border-2 border-amber-500/60 hover:border-amber-400 rounded-xl p-4 space-y-2 cursor-pointer transition shadow-lg shadow-amber-500/10" onclick="showModal('wed04')">
+          <div class="flex items-center justify-between text-xs font-bold text-amber-300">
+            <span>Wed 04 Nov</span><span class="mono text-amber-400 bg-amber-500/20 px-1.5 py-0.5 rounded">8.0h</span>
+          </div>
           <div class="space-y-1 text-[11px] text-slate-300">
             <p>• saLTIre test with Tri (2.0h)</p>
             <p>• Sandbox drawer components (3.5h)</p>
             <p class="text-amber-300 font-bold">⭐ DEPLOY STAGING AI Credit (2.5h)</p>
           </div>
         </div>
-        <div class="bg-slate-900 border-2 border-orange-500/70 rounded-xl p-4 space-y-2">
-          <div class="flex items-center justify-between text-xs font-bold text-orange-300"><span>Thu 05 Nov</span><span class="mono text-orange-400">7.5h</span></div>
+
+        <div class="bg-slate-900 border-2 border-orange-500/70 hover:border-orange-400 rounded-xl p-4 space-y-2 cursor-pointer transition shadow-lg shadow-orange-500/10" onclick="showModal('thu05')">
+          <div class="flex items-center justify-between text-xs font-bold text-orange-300">
+            <span>Thu 05 Nov</span><span class="mono text-orange-400 bg-orange-500/20 px-1.5 py-0.5 rounded">7.5h</span>
+          </div>
           <div class="space-y-1 text-[11px] text-slate-300">
             <p class="text-orange-300 font-bold">🚀 BÀN GIAO SANDBOX cho Brent (4.0h)</p>
             <p>• Gửi QA checklist AI Credit (1.5h)</p>
             <p>• Spec pack audit với Tri (2.0h)</p>
           </div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
-          <div class="flex items-center justify-between text-xs font-bold text-slate-200"><span>Fri 06 Nov</span><span class="mono text-emerald-400">5.0h</span></div>
+
+        <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-xl p-4 space-y-2 cursor-pointer transition shadow-sm" onclick="showModal('fri06')">
+          <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+            <span>Fri 06 Nov</span><span class="mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">5.0h</span>
+          </div>
           <div class="space-y-1 text-[11px] text-slate-400">
             <p>• Deliverables gửi Brent (1.5h)</p>
             <p>• Support Brent kickoff (2.0h)</p>
@@ -208,8 +222,37 @@
     </section>
   </main>
 
+  <!-- Interactive Day Modal -->
+  <div id="modal-box" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" onclick="closeModal()">
+    <div class="bg-slate-900 border border-slate-700 max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 id="modal-title" class="font-extrabold text-white text-base">Day Details</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+      <div id="modal-body" class="text-xs text-slate-300 space-y-2.5"></div>
+    </div>
+  </div>
+
   <footer class="bg-slate-900 border-t border-slate-800 py-4 text-center text-xs text-slate-500">
     Wistudi Archify Hub • Automated Operations System
   </footer>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    const data = {
+      mon02: { title: "Thứ Hai 02/11/2026 (7.5h)", body: "<p><b>1. Project C (1.5h):</b> Nhận access repos, schema repo, Staging, server Moodle. Bắt đầu Discovery D-01 đến D-08.</p><p><b>2. Sandbox Option 1 (3.5h):</b> Khởi tạo repo wistudi-block-lab, tích hợp UI snapshot.</p><p><b>3. AI Credit (2.5h):</b> Thiết kế bảng ledger, migration số dư và balance check middleware.</p>" },
+      tue03: { title: "Thứ Ba 03/11/2026 (8.0h)", body: "<p><b>1. Project C (2.0h):</b> Discovery D-09 đến D-16 & chọn lib LTI/JWT.</p><p><b>2. AI Credit (3.5h):</b> Logic trừ 2 credits atomic, transaction lock, nút toggle Admin.</p><p><b>3. Sandbox (2.5h):</b> Xây dựng mock context và responsive player.</p>" },
+      wed04: { title: "Thứ Tư 04/11/2026 (8.0h)", body: "<p><b>1. Project C (2.0h):</b> Test tool partner trên saLTIre cùng Trí.</p><p><b>2. Sandbox (3.5h):</b> Tích hợp settings và grading drawers.</p><p class='text-amber-300 font-bold'>⭐ AI Credit: DEPLOY LÊN STAGING (Charging = OFF) kèm QA checklist cho Brent.</p>" },
+      thu05: { title: "Thứ Năm 05/11/2026 (7.5h)", body: "<p class='text-orange-300 font-bold'>🚀 BÀN GIAO SANDBOX CHO BRENT (Cloudflare preview & walkthrough 30m).</p><p><b>2. AI Credit (1.5h):</b> Gửi QA checklist cho Brent nghiệm thu.</p><p><b>3. Project C (2.0h):</b> Rà soát spec pack với Trí.</p>" },
+      fri06: { title: "Thứ Sáu 06/11/2026 (5.0h)", body: "<p><b>1. Project C (1.5h):</b> Gửi Prep Pack cho Brent ký duyệt.</p><p><b>2. Sandbox (2.0h):</b> Hỗ trợ Brent bắt đầu dựng Callout blocks.</p><p><b>3. Governance (1.5h):</b> Tổng kết tuần & gửi Timesheet 75h.</p>" }
+    };
+    function showModal(k) { document.getElementById('modal-title').innerText = data[k].title; document.getElementById('modal-body').innerHTML = data[k].body; document.getElementById('modal-box').classList.remove('hidden'); }
+    function closeModal() { document.getElementById('modal-box').classList.add('hidden'); }
+  </script>
 </body>
 </html>
